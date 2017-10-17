@@ -4,12 +4,13 @@
 using namespace std;
 
 
-class Input {
+class Display {
 	public:
-        Coins coin;
+        int accum;
+        ;
     public:
-    	Input();
-    	~Input();
+    	Display(string init);
+    	~Display();
     private:
         void coinInput();
         
