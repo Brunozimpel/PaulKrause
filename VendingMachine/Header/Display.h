@@ -7,7 +7,6 @@ using namespace std;
 class Display {
 	public:
         int accum;
-        ;
     public:
     	Display(string init);
     	~Display();
