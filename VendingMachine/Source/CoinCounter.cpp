@@ -1,12 +1,13 @@
 #include "general.h"
 #include "CoinCounter.h"
 #include "Input.h"
-#include "Menu.h"
-#include "Display.h"
 using namespace std;
 
 CoinCounter::CoinCounter()
 {   
+	Oled.liga();
+	printString("GOOD MORNING From radio cuco");
+	soda = NADA;
 }
 
 CoinCounter::~CoinCounter()
@@ -29,31 +30,39 @@ void CoinCounter::CoinAccum(Coins newCoin)
 
 void CoinCounter::ReqDev()
 {
+	//setDevchangepin
+	oledClear();
+	printString("Take your money back");
 	accum = 0;
 }
 
 int CoinCounter::ReturnMoney()
 {
 	int change = SODA_PRICE - accum;
+	oledClear();
+	printString("Take your change");
 	return change;
     
 }
 
 Soda CoinCounter::ReturnSoda()
 {
-	if (soda == Soda::NADA) {
-		printf("escolhe uma porra de refri");
+	if (soda == NADA) {
+		oledClear();
+		printString("Select something");
 		return soda;
-	}else if(soda == Soda::ETIRPS){
-		printf("tirpsss");
+	}else if(soda == ETIRPS){
+		oledClear();
+		printString("ENJOY THE SPRITE");
 		accum = 0;
-		soda = Soda::NADA;
-		return Soda::ETIRPS;
+		soda = NADA;
+		return ETIRPS;
 	}
-	printf("meets");
+	oledClear();
+	printString("ENJOY THE TEEM");
 	accum = 0;
-	soda = Soda::NADA;
-	return Soda::ETIRPS;
+	soda = NADA;
+	return ETIRPS;
 	
 }
 

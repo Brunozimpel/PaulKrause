@@ -1,11 +1,11 @@
-#include "CoinCounter.h"
-#include "Input.h"
-#include "Menu.h"
+#include "CoinCounter.cpp"
+#include "Input.cpp"
 
 void Main() {
 	CoinCounter* control = new CoinCounter();
-	Menu menu = Menu(control);
-	Input input(control);
+	Input input = Input(control);
 	//Output output();
-	
+	while (1) {
+		input.coinInput();
+	}
 }

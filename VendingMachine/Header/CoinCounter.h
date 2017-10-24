@@ -1,16 +1,21 @@
+#ifndef COINCOUNTER
+#define COINCOUNTER
 #include <string.h>
 #include <iostream>
 #include "general.h"
+#include "OLED.h"
+#include "OLED_driver.h"
 #define SODA_PRICE 150
 using namespace std;
 
 
 
+
 class CoinCounter {
 	public:
-		//Output output;
+		OLED_driver Oled;
 		Coins coin;
-        Soda soda = Soda::NADA;
+        Soda soda;
     	CoinCounter();
     	~CoinCounter();
     	void CoinAccum(Coins newCoin);
@@ -23,3 +28,4 @@ class CoinCounter {
         Soda ReturnSoda();
         
 };
+#endif
