@@ -6,10 +6,11 @@ using namespace std;
 
 class Input {
     public:
-    	Input();
+    	Input(CoinCounter* control);
     	~Input();
     private:
+		CoinCounter* control;
         Coins coin;
-        void coinInput();
+        void coinInput(Coins newCoin); //
         
 };

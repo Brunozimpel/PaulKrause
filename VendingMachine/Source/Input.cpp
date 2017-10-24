@@ -4,8 +4,9 @@
 #include "Output.h"
 using namespace std;
 
-Input::Input()
+Input::Input(CoinCounter* control)
 {
+	this->control = control;
     
 }
 
@@ -14,7 +15,8 @@ Input::~Input()
     
 }
 
-void Input::coinInput()
+void Input::coinInput(Coins newCoin)
 {
-    
+		control->CoinAccum(newCoin);
+
 }

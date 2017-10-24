@@ -1,27 +1,25 @@
 #include <string.h>
 #include <iostream>
 #include "general.h"
+#define SODA_PRICE 150
 using namespace std;
+
 
 
 class CoinCounter {
 	public:
-        Coins coin;
-        
-        int accum;
-        Soda soda;
-        bool enoughCoins;
-        bool dev;
+		//Output output;
+		Coins coin;
+        Soda soda = Soda::NADA;
     	CoinCounter();
     	~CoinCounter();
     	void CoinAccum(Coins newCoin);
-    	void CoinAccum(bool newDev, Soda newSoda);
-    	
+    	void ReqDev();
     	
     private:
-        bool ReturnMoney();
-        bool ReturnSoda();
-        Output output;
-        Input input;
+		int accum;
+		bool enoughCoins;
+        int ReturnMoney();
+        Soda ReturnSoda();
         
 };
