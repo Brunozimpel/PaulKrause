@@ -6,12 +6,13 @@ using namespace std;
 
 class Menu {
     public:
-        Soda soda;
-        bool dev;
-    	Menu();
+    	Menu(CoinCounter* control);
     	~Menu();
+		void ReqMEET();
+		void ReqETIRPS();
+		void ReqDev();
     private:
-        void ReqMEET();
-        void ReqETIRPS();
-        void ReqDev();
+		CoinCounter* control;
+		Soda soda;
+		bool dev;
 };
